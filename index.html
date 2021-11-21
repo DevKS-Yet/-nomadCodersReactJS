@@ -9,12 +9,12 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
         const root = document.getElementById("root");
-        const title = (
+        const Title = () => (
             <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
                 Hello I'm a title
             </h3>
         );
-        const btn = (
+        const Btn = () => (
             <button style={{backgroundColor: "tomato"}} onClick={() => console.log("im clicked")}>
                 Click me
             </button>
@@ -29,7 +29,13 @@
         //     }
         // },
         // "Click me");
-        const conatiner = React.createElement("div", null, [title, btn]);
-        ReactDOM.render(conatiner, root)
+        const Conatiner = (
+            <div>
+                <Title />
+                <Btn />
+            </div>
+        );
+        // 대문자로 시작해야하는 것 매우 중요! 그렇지 않다면 html태그로 인식할 수도 있음
+        ReactDOM.render(Conatiner, root)
     </script>
 </html>
